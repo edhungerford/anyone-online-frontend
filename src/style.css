@@ -1,0 +1,51 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+#header-wrapper {
+	display: inline-block;
+	width: 100%;
+	font-family: 'Comic Sans MS', sans-serif;
+}
+#header-logo h1 {
+	display: inline;
+	text-transform: lowercase;
+}
+#header-menu-wrapper {
+	display: flex;
+}
+.header-menu-right {
+	text-align: right;
+}
+.header-menu-left {
+	display: inline-flex;
+	gap: 5px;
+}
+.header-menu-group {
+	flex-grow: 1;
+	flex-shrink: 1;
+}
+.header-menu-item {
+	display: inline;
+}
+main {
+	display: flex;
+	flex-direction: column;
+	height: auto;
+	flex-grow: 1;
+	flex-shrink: 1;
+}
+#chat-wrapper {
+	flex-shrink: 1;
+	flex-grow: 2;
+}
+#chat{
+	border: 2px inset white;
+}
+#app {
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+	padding: 5px;
+}
