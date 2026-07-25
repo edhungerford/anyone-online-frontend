@@ -1,5 +1,6 @@
 import { render } from 'preact';
 import { Header } from './header';
+import { MinigameWindow } from './minigameWindow.jsx';
 
 import preactLogo from './assets/preact.svg';
 import './style.css';
@@ -11,8 +12,9 @@ export function App() {
 		<Header />
 		<main>
 			<MainWindow></MainWindow>
-			<div><a>thing</a></div>
+			<MinigameWindow></MinigameWindow>
 		</main>
+		<footer></footer>
 		</>
 	);
 }

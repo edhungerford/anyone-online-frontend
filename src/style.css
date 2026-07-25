@@ -22,6 +22,9 @@
 	display: inline-flex;
 	gap: 5px;
 }
+.header-menu-item {
+	cursor: pointer;
+}
 .header-menu-group {
 	flex-grow: 1;
 	flex-shrink: 1;
@@ -35,17 +38,39 @@ main {
 	height: auto;
 	flex-grow: 1;
 	flex-shrink: 1;
+	flex-basis: 100%;
 }
 #chat-wrapper {
-	flex-shrink: 1;
-	flex-grow: 2;
+	flex: 2 2 calc(100% - 200px);
+}
+#minigame-wrapper {
+	flex: 1 0 200px;
 }
 #chat{
 	border: 2px inset white;
+	height: calc(100% - 20px);
+}
+.chat-message-wrapper{
+	width: 100%;
+	display:block;
+}
+.chat-message-wrapper:nth-child(even){
+	background-color: #4d4d4d
+}
+.chat-message-username {
+	font-weight: bold;
+	display: inline;
+}
+.chat-message-content {
+	display: inline;
+	margin-left: 10px;
 }
 #app {
 	display: flex;
 	flex-direction: column;
 	height: 100vh;
 	padding: 5px;
+}
+footer {
+	flex: 1 0 10px;
 }
