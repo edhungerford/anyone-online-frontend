@@ -3,8 +3,13 @@ import { ChatMessage } from "./chatMessage";
 
  export function MainWindow(){
     
-    const [messages, setMessages] = useState([["a","a"],["ab","ab"],["abc","abc"]]);
+    const [messages, setMessages] = useState([]);
     const [incomingMessage, setIncomingMessage] = useState("");
+
+    const chatMessageHandler = () => {
+        setMessages([...messages, ["m",incomingMessage]])
+        setIncomingMessage("");
+    }
 
     return(
         <div id="chat-wrapper">
@@ -14,8 +19,8 @@ import { ChatMessage } from "./chatMessage";
                 })}
             </div>
             <div id="chat-input">
-                <input type="text" id="chat-input-control" placeholder="Send a message..." value={incomingMessage} onInput={(e) => {setIncomingMessage(e.target.value);}}></input>
-                <input type="button" value="Send" id="chat-send-control" onClick={incomingMessage === "" ? null : ()=>setMessages([...messages, ["m",incomingMessage]])}></input>
+                <input type="text" id="chat-input-control" placeholder="Send a message..." value={incomingMessage} onKeyDown={(e) => {e.code == "Enter"? chatMessageHandler() : null}} onInput={(e) => {setIncomingMessage(e.target.value);}}></input>
+                <input type="button" value="Send" id="chat-send-control" onClick={incomingMessage === "" ? null : ()=>chatMessageHandler()}></input>
             </div>
         </div>
     );
