@@ -3,7 +3,7 @@ import { ChatMessage } from "./chatMessage";
 
  export function MainWindow(){
     
-    const [messages, setMessages] = useState([]);
+    const [messages, setMessages] = useState(Array());
     const [incomingMessage, setIncomingMessage] = useState("");
 
     const chatMessageHandler = () => {
@@ -19,8 +19,8 @@ import { ChatMessage } from "./chatMessage";
                 })}
             </div>
             <div id="chat-input">
-                <input type="text" id="chat-input-control" placeholder="Send a message..." value={incomingMessage} onKeyDown={(e) => {e.code == "Enter"? chatMessageHandler() : null}} onInput={(e) => {setIncomingMessage(e.target.value);}}></input>
-                <input type="button" value="Send" id="chat-send-control" onClick={incomingMessage === "" ? null : ()=>chatMessageHandler()}></input>
+                <input type="text" id="chat-input-control" placeholder="Send a message..." value={incomingMessage} onKeyDown={(e) => {e.code == "Enter"? chatMessageHandler() : undefined}} onInput={(e) => {e.target !== null && setIncomingMessage(e.target.value);}}></input>
+                <input type="button" value="Send" id="chat-send-control" onClick={incomingMessage === "" ? undefined : ()=>chatMessageHandler()}></input>
             </div>
         </div>
     );
